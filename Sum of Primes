@@ -1,0 +1,40 @@
+//Sum of Primes
+#include <iostream>
+using namespace std;
+
+int prime(int x)
+{
+	int y=0;
+    for(int i = 2; i <= x; i++)
+    {
+        if(x % i == 0)
+        {
+          y++;  
+    	}
+    }
+
+    return y;
+}
+int main()
+{
+    int num,a=0;
+	cout << "Enter a positive  integer: ";
+    cin >> num;
+
+    for(int i = 2; i <= num/2; i++)
+    {
+        if (prime(i)==1)
+        {
+            if (prime(num - i)==1)
+            {
+                cout << num << " = " << i << " + " << num-i << endl;
+                a++;
+            }
+            
+        }
+    }
+    if (a==0)
+    	 cout << num << " can't be expressed as sum of two prime numbers.";
+	    
+    return 0;
+}
