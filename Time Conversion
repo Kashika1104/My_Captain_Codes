@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+class time{
+	private :
+		int hrs,min,sec,sec1;
+	public:
+		displaytime();
+		calculatetime();	
+};
+
+//For Displaying Time in HH:MM::SS Format
+time :: displaytime(){
+	cout<<"Enter time : \n";
+	cout<<"  Hours? ";
+	cin>>hrs;
+	cout<<"  Minutes? ";
+	cin>>min;
+	cout<<"  Seconds? ";
+	cin>>sec;
+	cout<<"  The time is = ";
+	if(hrs<10)
+		cout<<"0"<<hrs<<":";
+	else
+		cout<<hrs<<":";
+	if(min<10)
+		cout<<"0"<<min<<":";
+	else
+		cout<<min<<":";
+	if(sec<10)
+		cout<<"0"<<sec;
+	else
+		cout<<sec;
+	
+}
+
+//For Displaying Total Time In Seconds
+time :: calculatetime(){
+	sec1=hrs*3600+min*60+sec;
+	cout<<endl;
+	cout<<"  Time in total seconds:"<<sec1;
+}
+
+main()
+	{
+		time t;
+		t.displaytime();
+		t.calculatetime();
+	}
